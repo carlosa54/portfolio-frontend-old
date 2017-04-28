@@ -1,0 +1,33 @@
+body {
+  font-family: sans-serif;
+}
+.navbar {
+	background: #111 !important;
+	margin-bottom: 0 !important;
+}
+
+.navbar a {
+	color: white !important;
+}
+
+.navbar-default {
+	margin-bottom: 0px;
+}
+
+
+.navbar a:hover {
+	color: #abaab7;
+}
+
+@media (min-width: 768px) {
+	.navbar {
+		padding-top: 20px;
+		height: 90px;
+		background: #111 !important;
+	}
+
+	.navbar-collapse {
+		margin-top: -1px;
+	}
+
+}
