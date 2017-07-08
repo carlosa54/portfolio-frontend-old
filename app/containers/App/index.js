@@ -12,6 +12,7 @@
  */
 
 import React from 'react';
+import CustomNavbar from 'components/CustomNavbar';
 
 export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -21,8 +22,11 @@ export default class App extends React.PureComponent { // eslint-disable-line re
 
   render() {
     return (
-      <div>
-        {React.Children.toArray(this.props.children)}
+      <div className="App">
+        <CustomNavbar />
+        <div className="container">
+          {React.Children.toArray(this.props.children)}
+        </div>
       </div>
     );
   }

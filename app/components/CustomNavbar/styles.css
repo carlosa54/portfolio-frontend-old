@@ -1,0 +1,48 @@
+.navbar {
+	background: #111 !important;
+	margin-bottom: 0 !important;
+}
+
+.navbar a {
+	color: white !important;
+}
+
+.navbar-default {
+	margin-bottom: 0px;
+}
+
+
+.navbar a:hover {
+	color: #abaab7 !important;
+}
+
+.caption a {
+	color: black;
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+	.thumbnail img {
+	width: 350px;
+	height: 260px;
+}
+}
+
+@media (min-width: 768px) {
+	.navbar {
+		padding-top: 20px;
+		height: 90px;
+		background: #111 !important;
+	}
+
+	.navbar-collapse {
+		margin-top: -1px;
+	}
+
+	.navbar-nav.navbar-center {
+	    position: absolute;
+	    left: 50%;
+	    transform: translatex(-50%);
+  }
+}
