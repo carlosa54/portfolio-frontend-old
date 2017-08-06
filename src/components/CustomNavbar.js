@@ -5,12 +5,12 @@ import {Router, Route, Link, IndexRoute, browserHistory} from 'react-router';
 import Projects from './Projects';
 import image from '../../public/img/crlogo.png';
 
-function CustomNavbar () {
+const CustomNavbar = () => {
 	return (
 		<Navbar inverse staticTop >
 			<Navbar.Header>
 				<Navbar.Brand>
-				<img height={90} src={image}/>
+				<img style={{height: 90, marginTop: -20}} src={image}/>
 				</Navbar.Brand>
 				<Navbar.Brand>
 				<LinkContainer to="/">
@@ -40,4 +40,4 @@ function CustomNavbar () {
 		)
 }
 
-module.exports = CustomNavbar;
+export default CustomNavbar;

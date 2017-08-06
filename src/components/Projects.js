@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 var Link = require('react-router-dom').Link;
 import api from '../utils/api';
 import queryString from 'query-string';
@@ -23,7 +23,9 @@ function ProjectGrid (props) {
 								}}>
 								More Info
 							</Link>
+							{ project.url &&
 							<a alt="Source code" target="_blank" href={project.url} className="btn pull-right"><i className="fa fa-github fa-2x"></i></a>
+							}
 						</div>
 					</div>
 				</div>
@@ -33,7 +35,7 @@ function ProjectGrid (props) {
 	)
 }
 
-class Projects extends React.Component {
+class Projects extends Component {
 	constructor (props) {
 		super(props);
 		this.state = {
