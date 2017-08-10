@@ -73,4 +73,4 @@ class ProjectDetail extends Component {
 	}
 }
 
-module.exports = ProjectDetail;
+export default ProjectDetail;

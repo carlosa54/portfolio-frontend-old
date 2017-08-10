@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 var Link = require('react-router-dom').Link;
 import api from '../utils/api';
-import queryString from 'query-string';
-function ProjectGrid (props) {
-	var projects = props.projects;
-	console.log(props)
+
+const ProjectGrid = ({projects, match}) => {
 	return (
 		<div className="row">
-			{ props.projects.map((project) => {
+			{projects.map((project) => {
 				return (
 				<div key={project.id}className="col-md-offset-0 col-md-4 col-xs-8 col-xs-offset-2">
 					<div className="thumbnail">
@@ -18,8 +16,8 @@ function ProjectGrid (props) {
 							<Link
 								className='btn btn-default'
 								to={{
-									pathname: props.match.url + '/detail/',
-									search: '?project=' +  project.id 
+									pathname: match.url + '/detail/',
+									search: `?project=${project.id}`
 								}}>
 								More Info
 							</Link>
@@ -95,4 +93,4 @@ class Projects extends Component {
 }
 
 
-module.exports = Projects;
+export default Projects;

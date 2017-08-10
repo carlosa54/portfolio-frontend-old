@@ -6,7 +6,7 @@ import Home from './Home';
 import About from './About';
 import Skills from './Skills';
 import Experience from './Experience';
-import {Switch, BrowserRouter as Router, Route, browserHistory } from 'react-router-dom';
+import {BrowserRouter as Router, Route, browserHistory } from 'react-router-dom';
 
 class App extends Component {
   render() {

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Navbar,Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import {Router, Route, Link, IndexRoute, browserHistory} from 'react-router';
-import Projects from './Projects';
 import image from '../../public/img/white.png';
 
 const CustomNavbar = () => {
@@ -10,7 +8,7 @@ const CustomNavbar = () => {
 		<Navbar inverse staticTop >
 			<Navbar.Header>
 				<Navbar.Brand>
-				<img style={{height: 70, marginTop: -10}} src={image}/>
+				<img alt="Logo" style={{height: 70, marginTop: -10}} src={image}/>
 				</Navbar.Brand>
 				<Navbar.Brand>
 				<LinkContainer to="/">
