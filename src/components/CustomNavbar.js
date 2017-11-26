@@ -5,22 +5,17 @@ import image from '../../public/img/white.png';
 
 const CustomNavbar = () => {
 	return (
-		<Navbar inverse staticTop >
+		<Navbar inverse staticTop collapseOnSelect >
 			<Navbar.Header>
 				<Navbar.Brand>
 				<img alt="Logo" style={{height: 70, marginTop: -10}} src={image}/>
-				</Navbar.Brand>
-				<Navbar.Brand>
-				<LinkContainer to="/">
-					<a>Carlos Ramírez</a>
-				</LinkContainer>
 				</Navbar.Brand>
 				<Navbar.Toggle />
 			</Navbar.Header>
 			<Navbar.Collapse style={{textAlign: 'center'}}>
 				<Nav className="navbar-center">
-					<LinkContainer to="/">
-						<NavItem>Home</NavItem>
+					<LinkContainer exact to="/">
+						<NavItem eventKey={1}>Home</NavItem>
 					</LinkContainer>
 					<LinkContainer to="/projects">
 						<NavItem eventKey={2}>Projects</NavItem>
@@ -36,8 +31,8 @@ const CustomNavbar = () => {
 					</LinkContainer>
 				</Nav>
 				<Nav pullRight>
-					<NavItem eventKey={1} href="https://github.com/carlosa54" target="_blank"><i className="fa fa-github fa-2x"></i></NavItem>
-					<NavItem eventKey={2} href="https://www.linkedin.com/in/carlos-ramirez-0a9764133/" target="_blank"><i className="fa fa-linkedin-square fa-2x"></i></NavItem>
+					<li role="presentation"><a href='https://github.com/carlosa54' target="_blank"><i className="fa fa-github fa-2x"></i></a></li>
+					<li role="presentation"><a href='https://www.linkedin.com/in/carlos-ramirez-0a9764133/' target="_blank"><i className="fa fa-linkedin-square fa-2x"></i></a></li>
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>

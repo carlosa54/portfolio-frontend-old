@@ -22,6 +22,11 @@ body {
 	color: #abaab7 !important;
 }
 
+.active a {
+	color: #8a8a8a !important;
+	background-color: transparent !important;
+}
+
 .caption a {
 	color: black;
 }
@@ -30,15 +35,48 @@ body {
 	padding-bottom: 40px;
 }
 
+.subtitle {
+	font-family: "Bookman";
+    font-size: 1vw;
+    line-height: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+    font-style: normal;
+    color: #cfcfcf;
+}
+
+.slick-slide h3 {
+    background: #00558B;
+    text-align: center;
+    width: 150px;
+}
+
+.slick-slide {
+	padding: 10px 30px;
+}
+
+.slick-next, .slick-prev {
+    display: none !important;
+}
+
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%;
+  background-color: #fafafa;
 }
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-color: #fafafa;
 }
 .footer {
   position: absolute;
@@ -75,4 +113,19 @@ and (min-width : 1224px) {
 	    left: 50%;
 	    transform: translatex(-50%);
   }
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-width:320px)  {
+	.navbar-brand {
+		padding-top: 20px;
+	}
+
+	.navbar-toggle {
+	    margin-top: 12px;
+	}
+
+	.img-responsive {
+		margin-bottom: 5px;
+	}
 }

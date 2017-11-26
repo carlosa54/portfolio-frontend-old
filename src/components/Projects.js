@@ -4,27 +4,26 @@ import api from '../utils/api';
 
 const ProjectGrid = ({projects, match}) => {
 	return (
-		<div className="row">
+		<div className="row equal">
 			{projects.map((project) => {
 				return (
-				<div key={project.id}className="col-md-offset-0 col-md-4 col-xs-8 col-xs-offset-2">
-					<div className="thumbnail">
-						<img alt={ project.title } src={ project.image } />
-						<div className="caption">
-							<h3>{ project.title }</h3>
-							<p>{ project.description }</p>
-							<Link
-								className='btn btn-default'
-								to={{
-									pathname: match.url + '/detail/',
-									search: `?project=${project.id}`
-								}}>
-								More Info
-							</Link>
-							{ project.url &&
-							<a alt="Source code" target="_blank" href={project.url} className="btn pull-right"><i className="fa fa-github fa-2x"></i></a>
-							}
+				<div key={project.id} className="col-md-offset-0 col-md-4 col-xs-6" style={{marginBottom: 10}}>
+					<div className="project-thumb" style={{float: 'left', backgroundColor: 'white', borderRadius: 5, border: '1px solid #efeeee', height: '100%'}}>
+					<Link to={{
+							pathname: match.url + '/detail/',
+							search: `?project=${project.id}`
+							}}
+							style={{color: 'black', textDecoration: 'none'}}
+							>
+						<div style={{ margin: '5px 5px 0 5px'}}>
+						<img alt={ project.title } src={ project.image } style={{borderRadius: 5, maxWidth: '100%'}}/>
+							<h4 style={{textTransform: 'uppercase'}}>{ project.title }</h4>
+							<p className="hidden-xs">{ project.description }</p>
 						</div>
+						</Link>
+						{ project.url &&
+							<a alt="Source code" target="_blank" href={project.url} className="btn pull-right hidden-xs" style={{color: 'black'}}><i className="fa fa-github fa-2x"></i></a>
+						}
 					</div>
 				</div>
 				)
@@ -82,7 +81,7 @@ class Projects extends Component {
 			)
 		}
 		return (
-			<div>
+			<div className="container">
 				<h1>Projects</h1>
 				<hr />
 				{!this.state.projects ? <p className="text-center"><i className="fa fa-refresh fa-spin fa-3x fa-fw"></i></p>:
