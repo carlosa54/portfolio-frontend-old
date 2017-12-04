@@ -1,10 +1,16 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 var Link = require('react-router-dom').Link;
 import api from '../utils/api';
+import styled from 'styled-components';
+
+const ProjectWrapper = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+`;
 
 const ProjectGrid = ({projects, match}) => {
 	return (
-		<div className="row equal">
+		<ProjectWrapper>
 			{projects.map((project) => {
 				return (
 				<div key={project.id} className="col-md-offset-0 col-md-4 col-xs-6" style={{marginBottom: 10}}>
@@ -28,11 +34,11 @@ const ProjectGrid = ({projects, match}) => {
 				</div>
 				)
 			})}
-		</div>
+		</ProjectWrapper>
 	)
 }
 
-class Projects extends Component {
+class Projects extends PureComponent {
 	constructor (props) {
 		super(props);
 		this.state = {

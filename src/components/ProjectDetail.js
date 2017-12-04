@@ -3,6 +3,18 @@ import queryString from 'query-string';
 import api from '../utils/api';
 import { Carousel, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Flex, RowCenter } from './common'
+import styled from 'styled-components';
+
+const GithubSection = RowCenter.extend`
+	margin-top: 20px;
+	margin-bottom: 10px;
+`;
+
+const GithhubAnchor = styled.a`
+	color: black;
+	text-decoration: none !important;
+`;
 
 function ProjectDetailUI(props) {
 	var project = props.project;
@@ -27,17 +39,17 @@ function ProjectDetailUI(props) {
 				})}
 			</Carousel>
 			<br />
-			<Row>
-				<Col md={10}>
-					<h2>Description</h2>		
-				</Col>
-				<Col md={2}>
-					{ project.url &&
-						<a alt="Source code" target="_blank" href={project.url} style={{color: 'black', display: 'inline-block'}}><i className="fa fa-github fa-2x"></i></a>
-					}	
-				</Col>
-
-			</Row>
+			<Flex style={{ justifyContent: "space-between", alignItems: "center"}}>
+				<h3>Description</h3>		
+				{ project.url &&
+					<GithhubAnchor alt="Source code" target="_blank" href={project.url}>
+						<GithubSection>
+						<i className="fa fa-github fa-2x"></i>
+						<h4 style={{ marginLeft: 10 }}>Github repo</h4>
+						</GithubSection>
+					</GithhubAnchor>
+				}
+			</Flex>
 			<hr/>
 			<p>{project.description}</p>
 		</Row>
